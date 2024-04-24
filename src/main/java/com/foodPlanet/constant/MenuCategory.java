@@ -1,0 +1,81 @@
+package com.foodPlanet.constant;
+
+public enum MenuCategory {
+    NOTHING("-- 카테고리를 선택해주세요. --"),
+    KFOOD("한식"),
+    CFOOD("중식"),
+    JFOOD("일식"),
+    WESTERN("양식"),
+    FASTFOOD("패스트푸드"),
+    VEGETARIAN("채식"),
+    VEGAN("비건"),
+    HALAL("할랄"),
+    SEAFOOD("해산물"),
+    DESSERTS("디저트"),
+    BARBECUE("바베큐"),
+    BRUNCH("브런치"),
+    FUSION("퓨전"),
+    STEAK("스테이크"),
+    NOODLES("면요리"),
+    SOUP("국물요리"),
+    SNACK("분식"),
+    COFFEE("커피"),
+    TEA("차"),
+    SALAD("샐러드"),
+    SUSHI("스시"),
+    CURRY("카레"),
+    BURGER("버거"),
+    PIZZA("피자"),
+    CHICKEN("치킨"),
+    SANDWICH("샌드위치"),
+    TACO("타코"),
+    RAMEN("라면"),
+    PASTA("파스타"),
+    BBQ("BBQ"),
+    HOTDOG("핫도그"),
+    WOK("웍요리"),
+    HOTPOT("찌개/전골"),
+    DIMSUM("딤섬"),
+    BAKERY("베이커리"),
+    ICECREAM("아이스크림"),
+    BUBBLETEA("버블티"),
+    JUICE("주스/스무디"),
+    BEER("맥주"),
+    WINE("와인"),
+    COCKTAIL("칵테일"),
+    SOJU("소주"),
+    WHISKEY("위스키"),
+    NONALCOHOLIC("논알콜음료"),
+    FRUITS("과일"),
+    VEGETABLES("채소"),
+    SEAFOODS("해산물"),
+    MEATS("육류"),
+    NOODLE_DISHES("면요리"),
+    RICE_DISHES("밥요리"),
+    RICECAKES("떡요리"),
+    PORRIDGES("죽"),
+    RICE_BOWLS("덮밥"),
+    STEWED_DISHES("찜요리"),
+    KIMCHIS("김치"),
+    BRAISED_DISHES("조림요리"),
+    STIR_FRIED_DISHES("볶음요리"),
+    FRIED_DISHES("튀김요리"),
+    GRILLED_DISHES("구이요리"),
+    HOTPOT_DISHES("찌개/전골"),
+    SOUPS("국물요리"),
+    SALADS("샐러드"),
+    SANDWICHES("샌드위치"),
+    BAKERIES("베이커리"),
+    DRINKS("음료"),
+    ALCOHOLIC("주류");
+
+    private final String displayName;
+
+    MenuCategory(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+}
