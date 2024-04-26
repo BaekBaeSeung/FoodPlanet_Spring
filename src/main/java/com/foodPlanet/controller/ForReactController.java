@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "react/data")
 public class ForReactController {
     // http://localhost:8888/react/data/exam01
+    // ㅁㅁ
     @GetMapping(value = "/exam01")
     public String getData01() {
 

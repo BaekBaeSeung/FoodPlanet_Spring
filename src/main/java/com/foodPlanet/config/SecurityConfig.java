@@ -12,7 +12,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // SecurityConfig01 시작
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // SecurityConfig02 시작
+        // SecurityConfig02 시작 ㅁㅁ
         // 인증(Authentication) 관련 설정
         http.cors().and()
                 .formLogin()
