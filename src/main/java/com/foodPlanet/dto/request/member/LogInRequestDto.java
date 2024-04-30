@@ -1,0 +1,16 @@
+package com.foodPlanet.dto.request.member;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.validation.constraints.NotBlank;
+
+@Getter
+@Setter
+public class LogInRequestDto {
+    @NotBlank
+    private String email;
+
+    @NotBlank
+    private String password;
+}

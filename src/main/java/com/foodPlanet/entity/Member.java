@@ -3,6 +3,7 @@ package com.foodPlanet.entity;
 import com.foodPlanet.constant.Role;
 import com.foodPlanet.dto.request.member.SignUpRequestDto;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "members")
 @Getter @Setter @ToString
+@NoArgsConstructor
 public class Member {
 
     // 회원 ID (Primary Key)

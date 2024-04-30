@@ -1,6 +1,8 @@
 package com.foodPlanet.controller;
 
+import com.foodPlanet.dto.request.member.LogInRequestDto;
 import com.foodPlanet.dto.request.member.SignUpRequestDto;
+import com.foodPlanet.dto.response.member.LogInResponseDto;
 import com.foodPlanet.dto.response.member.SignUpResponseDto;
 import com.foodPlanet.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +24,12 @@ public class MemberController {
     @PostMapping("/insert")
     public ResponseEntity<? super SignUpResponseDto> signup(@RequestBody @Valid SignUpRequestDto requestBody){
         ResponseEntity<? super SignUpResponseDto> response = memberService.signUp(requestBody);
+        return response;
+    }
+
+    @PostMapping("login")
+    public ResponseEntity<? super LogInResponseDto> login(@RequestBody @Valid LogInRequestDto requestBody){
+        ResponseEntity<? super LogInResponseDto> response = memberService.logIn(requestBody);
         return response;
     }
 }
