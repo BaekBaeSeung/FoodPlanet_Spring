@@ -19,7 +19,7 @@ public class MemberController {
 
     private final MemberService memberService;
 
-    @PostMapping("/signup")
+    @PostMapping("/insert")
     public ResponseEntity<? super SignUpResponseDto> signup(@RequestBody @Valid SignUpRequestDto requestBody){
         ResponseEntity<? super SignUpResponseDto> response = memberService.signUp(requestBody);
         return response;

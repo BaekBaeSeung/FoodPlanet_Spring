@@ -66,8 +66,8 @@ public class Member {
         this.phone = dto.getPhone();
         this.birth = dto.getBirth();
         this.gender = "남자";
-        this.role = Role.USER;
-        this.agreedPersonal = dto.getAgreedPersonal();
+        this.role = dto.getRole();
+//        this.agreedPersonal = dto.getAgreedPersonal();
 
     }
 }
