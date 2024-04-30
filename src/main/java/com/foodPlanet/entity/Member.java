@@ -1,6 +1,7 @@
 package com.foodPlanet.entity;
 
 import com.foodPlanet.constant.Role;
+import com.foodPlanet.dto.request.member.SignUpRequestDto;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -15,7 +16,7 @@ public class Member {
     // 회원 ID (Primary Key)
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "member_id", nullable = false)
+    @Column(name = "member_id")
     private Long id;
 
     // 회원 역할 (예: ADMIN, USER 등)
@@ -32,8 +33,8 @@ public class Member {
     private String password;
 
     // 회원 이름
-    @Column(name = "member_name", nullable = false)
-    private String memberName;
+    @Column(nullable = false)
+    private String nickname;
 
     // 회원 전화번호
     @Column(name = "phone", nullable = false)
@@ -55,4 +56,18 @@ public class Member {
     @Column(name = "member_image", length = 255)
     private String memberImage;
 
+    // 약관 동의
+    @Column(nullable = false)
+    private boolean agreedPersonal;
+    public Member(SignUpRequestDto dto) {
+        this.email = dto.getEmail();
+        this.password = dto.getPassword();
+        this.nickname = dto.getNickname();
+        this.phone = dto.getPhone();
+        this.birth = dto.getBirth();
+        this.gender = "남자";
+        this.role = Role.USER;
+        this.agreedPersonal = dto.getAgreedPersonal();
+
+    }
 }
