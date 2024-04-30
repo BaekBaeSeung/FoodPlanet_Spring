@@ -1,8 +1,11 @@
 package com.foodPlanet.dto.request.member;
 
+import com.foodPlanet.constant.Role;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.*;
 @Getter
 @Setter
@@ -23,6 +26,11 @@ public class SignUpRequestDto {
     @NotBlank
     private String birth;
 
-    @NotNull @AssertTrue
-    private Boolean agreedPersonal;
+    private String gender = "남자";
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+//    @NotNull @AssertTrue
+//    private Boolean agreedPersonal;
 }
