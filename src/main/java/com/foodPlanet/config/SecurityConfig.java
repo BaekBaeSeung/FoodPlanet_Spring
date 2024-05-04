@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                .antMatchers("/", "/member/**", "/search/**", "/file/**").permitAll()
+                .antMatchers("/", "/member/**", "/search/**","/shops/**", "/file/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/board/**").permitAll()
                 .mvcMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated().and()

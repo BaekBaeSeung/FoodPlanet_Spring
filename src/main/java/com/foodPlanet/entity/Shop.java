@@ -1,5 +1,6 @@
 package com.foodPlanet.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.foodPlanet.constant.ShopCategory;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +20,7 @@ public class Shop {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id", nullable = false)
+    @JsonIgnore
     private Member member;
 
     @Column(name = "shopCategory", nullable = false)
@@ -75,6 +77,38 @@ public class Shop {
     @Column(name = "shop_image05")
     private String shopImage05;
 
-    // 생성자, 게터, 세터 등은 생략
+    public Shop() {
+    }
+
+    public Shop(Long id, Member member,
+                ShopCategory shopCategory,
+                String shopName, String address,
+                String addressDetail, String openTime,
+                String closeTime, String breakTime,
+                String comment, String notice,
+                String parking, String facilities,
+                Integer maxCapacity, String shopImage01,
+                String shopImage02, String shopImage03,
+                String shopImage04, String shopImage05) {
+        this.id = id;
+        this.member = member;
+        this.shopCategory = shopCategory;
+        this.shopName = shopName;
+        this.address = address;
+        this.addressDetail = addressDetail;
+        this.openTime = openTime;
+        this.closeTime = closeTime;
+        this.breakTime = breakTime;
+        this.comment = comment;
+        this.notice = notice;
+        this.parking = parking;
+        this.facilities = facilities;
+        this.maxCapacity = maxCapacity;
+        this.shopImage01 = shopImage01;
+        this.shopImage02 = shopImage02;
+        this.shopImage03 = shopImage03;
+        this.shopImage04 = shopImage04;
+        this.shopImage05 = shopImage05;
+    }
 }
 
