@@ -19,7 +19,10 @@ public enum ShopCategory {
     FAMILY_RESTAURANT("가족레스토랑"),
     BRUNCH("브런치"),
     FUSION("퓨전"),
-    DOG_FRIENDLY("애견동반");
+    DOG_FRIENDLY("애견동반"),
+    RESTAURANT("레스토랑"),
+    BAKERY("베이커리");
+
 
     private final String displayName;
 
