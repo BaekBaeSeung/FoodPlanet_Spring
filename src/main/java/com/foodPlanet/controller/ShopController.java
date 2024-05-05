@@ -1,6 +1,7 @@
 package com.foodPlanet.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -47,6 +48,41 @@ public class ShopController {
 
         }else return ResponseEntity.status(HttpStatus.OK).body(shops);
 
+    }
+
+    @GetMapping("/readEightShops")
+    public ResponseEntity<?> readEightShops() {
+        List<Shop> allShops = (List<Shop>) shopService.findAll();
+
+        if (allShops.isEmpty()) {
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Content-Type", "application/json");
+            return new ResponseEntity<String>("[]", headers, HttpStatus.BAD_REQUEST);
+        } else {
+            // Randomly select 8 shops
+            List<Shop> shuffledShops = new ArrayList<>(allShops);
+            Collections.shuffle(shuffledShops);
+            List<Shop> selectedShops = shuffledShops.subList(0, 8);
+
+            return ResponseEntity.status(HttpStatus.OK).body(selectedShops);
+        }
+    }
+    @GetMapping("/readSixShops")
+    public ResponseEntity<?> readSixShops() {
+        List<Shop> allShops = (List<Shop>) shopService.findAll();
+
+        if (allShops.isEmpty()) {
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Content-Type", "application/json");
+            return new ResponseEntity<String>("[]", headers, HttpStatus.BAD_REQUEST);
+        } else {
+            // Randomly select 8 shops
+            List<Shop> shuffledShops = new ArrayList<>(allShops);
+            Collections.shuffle(shuffledShops);
+            List<Shop> selectedShops = shuffledShops.subList(0, 6);
+
+            return ResponseEntity.status(HttpStatus.OK).body(selectedShops);
+        }
     }
 
 }
