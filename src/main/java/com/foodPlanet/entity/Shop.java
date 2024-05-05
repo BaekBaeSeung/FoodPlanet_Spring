@@ -53,6 +53,9 @@ public class Shop {
     @Column(name = "notice")
     private String notice;
 
+    @Column(name = "offer")
+    private String offer;
+
     @Column(name = "parking", nullable = false)
     private String parking;
 

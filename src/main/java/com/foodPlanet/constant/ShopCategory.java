@@ -21,7 +21,8 @@ public enum ShopCategory {
     FUSION("퓨전"),
     DOG_FRIENDLY("애견동반"),
     RESTAURANT("레스토랑"),
-    BAKERY("베이커리");
+    BAKERY("베이커리"),
+    BBQ("BBQ");
 
 
     private final String displayName;
